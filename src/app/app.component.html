@@ -1,0 +1,11 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark flex flex-between">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> {{ 'Home' }} </a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container">
+    <router-outlet></router-outlet>
+</div>

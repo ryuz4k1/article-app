@@ -1,0 +1,63 @@
+<div class="align-center flex-between">
+    <h1> {{ 'Articles' }} </h1>
+    <a class="btn btn-sm btn-success mb-2" (click)="addArticle()"> {{ 'Add Article' }} </a>
+</div>
+
+<!-- <pre>
+    {{ articles$ | async | json }}
+</pre> -->
+
+<cdk-virtual-scroll-viewport style="display: block; height: calc(100vh - 150px);" itemSize="100">
+    <li *cdkVirtualFor="let item of (articles$ | async | sortById | async); let index = index" class="blog-preview p-3 m-2" (click)="detailArticle(item?.id, $event)">
+        <div class="flex-between">
+            <h2> {{ item?.title }} </h2>
+            <button *ngIf="activeUser$ | async" (click)="deleteArticle(item?.id, $event)" mat-flat-button color="error">
+                {{ 'X' }}
+            </button>
+        </div>
+        <p class="three-dots"> {{ item?.body }} </p>
+        <div class="flex-between">
+            <p>Written by {{ item?.author }} </p>
+            <p class="opacity">{{ item?.createdDate | date: 'dd.MM.yyyy HH:mm:ss' }} </p>
+        </div>
+    </li>
+</cdk-virtual-scroll-viewport>
+
+
+
+<nz-modal #checkModal [nzTitle]="title" [nzFooter]="footer" [nzOkLoading]="modalLoading" (nzOnCancel)="modal.close()">
+    <span class="content-title">
+        {{ 'User information required if you want to create a new article' }}
+    </span>
+    <div class="content">
+        <form #userCheckForm="ngForm" [autocomplete]="'off'">
+            <div class="row flex-column align-center">
+                <mat-form-field class="col-6">
+                    <mat-label>{{ 'username' }} </mat-label>
+                    <input matInput ngModel name="username" type="text" [autocomplete]="'off'">
+                </mat-form-field>
+                <mat-form-field class="col-6">
+                    <mat-label>{{ 'Password' }} </mat-label>
+                    <input matInput ngModel name="password" type="password" [autocomplete]="'off'">
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</nz-modal>
+
+<ng-template #title>
+    <span class="header-title">
+        {{ 'User Info Required' }}
+    </span>
+</ng-template>
+
+<ng-template #footer>
+    <div style="display: flex; justify-content: center;">
+        <button mat-flat-button type="button" style="width: 100px; border-radius: 6px; background-color: #0a153e; color: white;" (click)="cancel()">
+            <span class="title"> {{ 'CANCEL' }} </span>
+        </button>
+        <button mat-flat-button type="button" style="width: 100px; border-radius: 6px; background-color: #ff2900; color: white;" (click)="okay(userCheckForm)">
+            <span class="title"> {{ 'OK' }} </span>
+        </button>
+    </div>
+</ng-template>

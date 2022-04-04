@@ -1,0 +1,13 @@
+<div class="p-4">
+    <div class="container">
+        <div>
+
+            <div>
+                <h1> {{ 'Add Article' }} </h1>
+            </div>
+        
+        
+            <app-form (formSubmit)="createArticle($event)" [article]="{}"></app-form>
+        </div>
+    </div>
+</div>

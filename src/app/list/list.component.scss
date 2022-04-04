@@ -1,0 +1,30 @@
+.blog-preview {
+    border-bottom: 1px solid #fafafa;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #f1356d;
+        margin-bottom: 8px;
+    }
+}
+
+.three-dots {
+    white-space: nowrap;
+    max-width: 50rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.opacity {
+    opacity: 0.7;
+}
+
+li {
+    list-style: none;
+    padding-left: 0;
+}
