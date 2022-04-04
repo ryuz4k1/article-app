@@ -1,0 +1,7 @@
+<div>
+    <div>
+        <h1> {{ 'Edit' }} </h1>
+    </div>
+
+    <app-form (formSubmit)="updateArticle($event)" [article]="activeArticle$ | async"></app-form>
+</div>

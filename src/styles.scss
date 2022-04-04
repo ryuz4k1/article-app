@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex {
+  display: flex;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.align-start {
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.centered {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+<form #form="ngForm" (ngSubmit)="submit(form?.value, form)" [autocomplete]="'off'">
+    <div class="row flex-column align-center">
+        <mat-form-field class="col-6">
+            <mat-label>{{ 'Title' }} </mat-label>
+            <input matInput [ngModel]="(article$ | async)?.title" name="title" required>
+        </mat-form-field>
+        <div class="col-6">
+            <textarea matInput [ngModel]="(article$ | async)?.body" name="body" placeholder="Body *" class="p-3" required></textarea>
+        </div>
+    </div>
+    <div class="col-12 pt-5 centered">
+        <button [disabled]="(loading$ | async)" class="btn btn-primary" type="submit">
+            <span *ngIf="(loading$ | async)" class="spinner-border spinner-border-sm mr-1"></span>
+            {{ 'Save' }}
+        </button>
+        <a routerLink="/list" type="button" class="btn btn-link"> {{ 'Cancel' }} </a>
+    </div>
+</form>

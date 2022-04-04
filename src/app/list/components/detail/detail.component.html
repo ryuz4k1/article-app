@@ -1,0 +1,20 @@
+<div>
+
+    <div>
+        <h1> {{ 'Detail' }} </h1>
+    </div>
+
+
+    <div>
+        <div class="blog-preview p-3 m-2">
+            <div class="flex-between">
+                <h2> {{ (activeArticle$ | async)?.title }} </h2>
+            </div>
+            <p> {{ (activeArticle$ | async)?.body }} </p>
+            <div class="flex-between">
+                <p>Written by {{ (activeArticle$ | async)?.author }} </p>
+                <p class="opacity">{{ (activeArticle$ | async)?.createdDate | date: 'dd.MM.yyyy HH:mm:ss' }} </p>
+            </div>
+        </div>
+    </div>
+</div>

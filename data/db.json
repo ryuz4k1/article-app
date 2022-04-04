@@ -1,0 +1,18 @@
+{
+  "articles": [
+    {
+      "title": "Article 1",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent interdum lobortis metus eget suscipit. Maecenas id pellentesque orci. Duis semper auctor malesuada. Aliquam erat volutpat. Aliquam tempus hendrerit ultrices. Sed in nibh vel ipsum euismod dapibus. Vivamus volutpat dictum massa, eget hendrerit est fermentum eget. In hac habitasse platea dictumst. Nunc ullamcorper rutrum quam vitae semper. Nam pretium turpis at ante efficitur, vel lacinia quam gravida.",
+      "author": "ryuz4k1",
+      "id": 1,
+      "createdDate": "2022-04-04T09:52:38.229"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "ryuz4k1",
+      "password": "123456"
+    }
+  ]
+}
